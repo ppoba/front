@@ -5,21 +5,25 @@ import { sfPro, inter } from "./fonts";
 import Nav from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
+// import CssBaseline from '@mui/material/CssBaseline';
+// import { ThemeProvider } from '@mui/material/styles';
+// import { createTheme } from '@mui/material/styles';
 
 export const metadata = {
-  title: "Precedent - Building blocks for your Next.js project",
+  title: "뽀바줘",
   description:
-    "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
-  twitter: {
-    card: "summary_large_image",
-    title: "Precedent - Building blocks for your Next.js project",
-    description:
-      "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
-    creator: "@steventey",
-  },
-  metadataBase: new URL("https://precedent.dev"),
+    "뽀바줘",
   themeColor: "#FFF",
 };
+
+
+// Create a theme instance.
+// const muiTheme = createTheme({
+//   palette: {
+//     mode: "light",
+//   },
+// });
+
 
 export default async function RootLayout({
   children,
@@ -28,18 +32,21 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* <ThemeProvider theme={muiTheme}> */}
+        {/* <CssBaseline /> */}
       <body className={cx(sfPro.variable, inter.variable)}>
         <div className={`fixed h-screen w-full}`} />
-        <Suspense fallback="...">
+        {/* <Suspense fallback="...">*/}
           {/* @ts-expect-error Server Component */}
-          <Nav />
-        </Suspense>
-        <main className="flex min-h-screen w-full flex-col items-center justify-center py-32">
+          {/* <Nav /> */}
+        {/* </Suspense>  */}
+        <main className="flex min-h-screen w-full flex-col items-center justify-center py-10">
           {children}
         </main>
         <Footer />
         <Analytics />
       </body>
+    {/* </ThemeProvider> */}
     </html>
   );
 }
