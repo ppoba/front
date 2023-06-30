@@ -11,7 +11,7 @@ const LayoutWrapper = ({ children }) => {
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
-        <header className="flex items-center justify-between py-10">
+        <header className="flex items-center justify-between py-4">
           <div>
             <Link href="/" aria-label={siteMetadata.headerTitle}>
               <div className="flex items-center justify-between">
@@ -28,7 +28,7 @@ const LayoutWrapper = ({ children }) => {
                 <Link
                   href="#"
                   aria-label="뒤로가기"
-                  className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
+                  className="text-xl font-bold text-mainColor sm:p-4"
                 >
                   뒤로가기
                 </Link>
@@ -36,7 +36,7 @@ const LayoutWrapper = ({ children }) => {
             </Link>
           </div>
           <div className="flex items-center text-base leading-5">
-            <div className="hidden sm:block">
+            <div className=" sm:block">
               {headerNavLinks.map((link) => (
                 <Link
                   key={link.title}
@@ -47,7 +47,7 @@ const LayoutWrapper = ({ children }) => {
                 </Link>
               ))}
             </div>
-            <ThemeSwitch />
+            {/* <ThemeSwitch /> */}
             <MobileNav />
           </div>
         </header>

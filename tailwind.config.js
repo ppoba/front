@@ -33,6 +33,7 @@ module.exports = {
         mainColor: '#799640',
         borderColor: '#799640',
         bgCardColor: '#ffffff',
+        buttonColor: '#5E6F3D',
         primary: colors.teal,
         gray: colors.neutral,
       },
