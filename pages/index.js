@@ -33,6 +33,20 @@ const AirbnbSlider = styled(Slider)(({ theme }) => ({
   color: '#799640',
   height: 12,
   padding: '13px 0',
+  '& .MuiSlider-markLabel': {
+    fontFamily: 'UhBeeQUEENJ',
+    fontSize: '14',
+    fontWeight: 700,
+  },
+  '& .MuiSlider-valueLabel': {
+    background: '#000000',
+    color: '#ffffff',
+    borderRadius: 10,
+    fontFamily: 'UhBeeQUEENJ',
+    lineHeight: '14px',
+    fontSize: '14',
+    padding: '2px 10px 5px 10px',
+  },
   '& .MuiSlider-thumb': {
     height: 27,
     width: 27,
@@ -58,15 +72,10 @@ function AirbnbThumbComponent(props) {
   return <SliderThumb {...other}>{children}</SliderThumb>
 }
 
-function ValueLabelComponent(props) {
-  const { children, value } = props
-
-  return (
-    <Tooltip enterTouchDelay={0} placement="top" title={value}>
-      {children}
-    </Tooltip>
-  )
+function valueLabelFormat(value) {
+  return `앞으로 ${value}분!`
 }
+
 export default function Home({ posts }) {
   return (
     <>
@@ -90,9 +99,9 @@ export default function Home({ posts }) {
           className=" mt-2"
           valueLabelDisplay="auto"
           slots={{ thumb: AirbnbThumbComponent }}
-          getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
           defaultValue={20}
           marks={marks}
+          valueLabelFormat={valueLabelFormat}
         />
       </div>
     </>
