@@ -44,8 +44,8 @@ export default function Home({ posts }) {
           height={150}
         />
         <div className="-mt-10 rounded-2xl border-2 border-borderColor bg-white pb-6 pt-10  text-center">
-          <div className="text-3xl font-bold">점심메뉴 추천 해 주세요</div>
-          <div className="mt-4 text-xl text-black">
+          <div className="font-bold sm:text-3xl xs:text-2xl">점심메뉴 추천 해 주세요</div>
+          <div className="mt-4 text-black sm:text-base md:text-xl">
             참여 인원 : <span className="font-bold">12</span>명
             <span className="pl-4 pr-2 text-mainColor">|</span> 남은 시간 :
             <span className="font-bold">12</span>분
@@ -55,8 +55,8 @@ export default function Home({ posts }) {
       <div className="mt-4 flex flex-col">
         <div>항목 6개</div>
         <div className="mt-2 grid rounded-2xl border border-dashed border-borderColor bg-bgCardColor/50 p-4">
-          <div className="grid grid-cols-12 gap-1 border-b-[2px] pt-3 pb-3">
-            <div className="col-span-3">
+          <div className="grid grid-cols-12 gap-2 border-b-[2px] pt-3 pb-3">
+            <div className="col-span-2">
               <Image
                 alt={'짜장면'}
                 src={'/static/images/sample.png'}
@@ -65,52 +65,12 @@ export default function Home({ posts }) {
                 height={80}
               />
             </div>
-            <div className="col-span-6 ">
+            <div className="col-span-8 ">
               <div className="text-xl text-black">짜장면</div>
               <div className="text-sm text-grayColor">투표 1명</div>
             </div>
-            <Link href="/" className="col-span-3">
-              <button className="text-md w-full rounded-xl border-2 border-buttonBorderColor bg-mainColor p-2 font-bold text-white shadow transition-colors duration-150">
-                투표
-              </button>
-            </Link>
-          </div>
-          <div className="grid grid-cols-12 gap-1 border-b-[2px] pt-3 pb-3">
-            <div className="col-span-3">
-              <Image
-                alt={'짜장면'}
-                src={'/static/images/sample.png'}
-                className="object-contain"
-                width={80}
-                height={80}
-              />
-            </div>
-            <div className="col-span-6 ">
-              <div className="text-xl text-black">짜장면</div>
-              <div className="text-sm text-grayColor">투표 1명</div>
-            </div>
-            <Link href="/" className="col-span-3">
-              <button className="text-md w-full rounded-xl border-2 border-buttonBorderColor bg-mainColor p-2 font-bold text-white shadow transition-colors duration-150">
-                투표
-              </button>
-            </Link>
-          </div>
-          <div className="grid grid-cols-12 gap-1 pt-3 pb-3">
-            <div className="col-span-3">
-              <Image
-                alt={'짜장면'}
-                src={'/static/images/sample.png'}
-                className="object-contain"
-                width={80}
-                height={80}
-              />
-            </div>
-            <div className="col-span-6 ">
-              <div className="text-xl text-black">돈까스먹으러갈껀데 같이 줄서러 갈사람?</div>
-              <div className="text-sm text-grayColor">투표 1명</div>
-            </div>
-            <Link href="/" className="col-span-3">
-              <button className="text-md w-full rounded-xl border-2 border-buttonBorderColor bg-mainColor p-2 font-bold text-white shadow transition-colors duration-150">
+            <Link href="/" className="col-span-2">
+              <button className="w-full rounded-xl border-2 border-buttonBorderColor bg-mainColor pt-2 pb-2 text-sm font-bold text-white shadow transition-colors duration-150 sm:pt-1 sm:pb-1">
                 투표
               </button>
             </Link>

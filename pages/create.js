@@ -81,7 +81,7 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="rounded-2xl border border-dashed border-borderColor bg-bgCardColor/50  p-10">
-        <h1 className="leading-20 text-2xl font-extrabold tracking-tight  dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
+        <h1 className="leading-20 text-2xl font-extrabold tracking-tight  dark:text-gray-100 sm:text-2xl sm:leading-8 md:text-3xl md:leading-14">
           미션을 적어주세요
         </h1>
         <div className="relative mt-4">
