@@ -10,7 +10,7 @@ import ThemeSwitch from './ThemeSwitch'
 const LayoutWrapper = ({ children }) => {
   return (
     <SectionContainer>
-      <div className="flex h-screen min-h-screen flex-col">
+      <div className="relative flex h-screen min-h-screen flex-col">
         <header className="sticky top-[0vh] flex items-center justify-between bg-bgColor ">
           <div>
             <Link href="/" aria-label={siteMetadata.headerTitle}>
@@ -41,7 +41,7 @@ const LayoutWrapper = ({ children }) => {
             <MobileNav />
           </div>
         </header>
-        <main>{children}</main>
+        <main className="  max-h-[calc(100vh_-_7rem)] overflow-auto  pr-4">{children}</main>
         <Footer />
       </div>
     </SectionContainer>

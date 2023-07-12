@@ -4,7 +4,7 @@ import SocialIcon from '@/components/social-icons'
 
 export default function Footer() {
   return (
-    <footer className="sticky bottom-[2vh]">
+    <footer className="absolute bottom-0 w-full">
       <div className="mb-3 flex flex-col items-center">
         <Link href="/" className=" mt-2 w-full  ">
           <button className="text-md inline w-full rounded-2xl border border-transparent bg-buttonColor px-4 py-2 font-bold leading-8 text-white shadow transition-colors duration-150">
