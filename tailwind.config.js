@@ -44,6 +44,7 @@ module.exports = {
         buttonColor: '#5E6F3D',
         buttonBorderColor: '#5E6F3D',
         grayColor: '#828282',
+        rank1Color: '#EB5757',
         primary: colors.teal,
         gray: colors.neutral,
       },
