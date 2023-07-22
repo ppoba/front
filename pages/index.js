@@ -1,4 +1,6 @@
 import Link from '@/components/Link'
+import IconButton from '@mui/material/IconButton'
+import SearchIcon from '@mui/icons-material/Search'
 import { PageSEO } from '@/components/SEO'
 import Image from '@/components/Image'
 import Tag from '@/components/Tag'
@@ -37,83 +39,19 @@ export default function Home({ posts }) {
           <div className="-mt-9 flex justify-center">
             <Image alt={'삼콩이 뽀바줘'} src={'/static/images/logo.png'} width={130} height={70} />
           </div>
-          <div className="-mt-4 flex justify-between rounded-2xl border-2 border-borderColor bg-white p-2">
+          <div className="-mt-4 flex justify-between rounded-2xl border-2 border-borderColor bg-white px-2 py-1">
             <input
               type="text"
               onChange={(e) => {}}
-              className="border-1 w-[90%] focus:border-current focus:ring-0 "
+              className="color-inputColor w-[90%] border-0 focus:border-current focus:ring-0"
+              placeholder="찾고있는 방이 있나요?"
             />
+            <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+              <SearchIcon />
+            </IconButton>
           </div>
-        </div>
-        <div className=" flex flex-col  gap-2">
-          <div>항목 6개</div>
-          <div className="mt-2 grid rounded-2xl border border-dashed border-borderColor bg-bgCardColor/50 px-4 py-2">
-            <div className="grid grid-cols-12 gap-2 border-b-[2px] pb-3 pt-3">
-              <div className="col-span-2">
-                <div className=" w-100 center leading-0 rounded-lg bg-rank1Color py-[2px] text-center text-white">
-                  1위
-                </div>
-              </div>
-              <div className="col-span-8 ">
-                <div className="text-2xl leading-6 text-black">
-                  짜장면짜장면짜장면짜장면짜장면짜장면짜장면
-                </div>
-                <div className="text-sm leading-10 text-grayColor">투표 1명</div>
-              </div>
-              <div className="col-span-2">
-                <Image
-                  alt={'짜장면'}
-                  src={'/static/images/sample.png'}
-                  className="object-contain"
-                  width={80}
-                  height={80}
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-12 gap-2 border-b-[2px] pb-3 pt-3">
-              <div className="col-span-2">
-                <div className=" w-100 center leading-0 rounded-lg border border-buttonColor bg-white py-[2px] text-center text-black">
-                  2위
-                </div>
-              </div>
-              <div className="col-span-8 ">
-                <div className="text-2xl leading-6 text-black">
-                  짜장면짜장면짜장면짜장면짜장면짜장면짜장면
-                </div>
-                <div className="text-sm leading-10 text-grayColor">투표 1명</div>
-              </div>
-              <div className="col-span-2">
-                <Image
-                  alt={'짜장면'}
-                  src={'/static/images/sample.png'}
-                  className="object-contain"
-                  width={80}
-                  height={80}
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-12 gap-2  pb-3 pt-3">
-              <div className="col-span-2">
-                <div className=" w-100 center leading-0 rounded-lg border border-buttonColor bg-white py-[2px] text-center text-black">
-                  3위
-                </div>
-              </div>
-              <div className="col-span-8 ">
-                <div className="text-2xl leading-6 text-black">
-                  짜장면짜장면짜장면짜장면짜장면짜장면짜장면
-                </div>
-                <div className="text-sm leading-10 text-grayColor">투표 1명</div>
-              </div>
-              <div className="col-span-2">
-                <Image
-                  alt={'짜장면'}
-                  src={'/static/images/sample.png'}
-                  className="object-contain"
-                  width={80}
-                  height={80}
-                />
-              </div>
-            </div>
+          <div className="mt-2 flex justify-center text-3xl font-bold">
+            가장 들어가 보고 싶은 방은?
           </div>
         </div>
       </main>
