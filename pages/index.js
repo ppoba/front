@@ -1,5 +1,6 @@
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
+import Image from '@/components/Image'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
@@ -18,92 +19,102 @@ export async function getStaticProps() {
   return { props: { posts } }
 }
 
-const marks = [
-  {
-    value: 0,
-    label: '10분',
-  },
-  {
-    value: 100,
-    label: '100분',
-  },
-]
-
-const AirbnbSlider = styled(Slider)(({ theme }) => ({
-  color: '#799640',
-  height: 12,
-  padding: '13px 0',
-  '& .MuiSlider-markLabel': {
-    fontFamily: 'UhBeeQUEENJ',
-    fontSize: '14',
-    fontWeight: 700,
-  },
-  '& .MuiSlider-valueLabel': {
-    background: '#000000',
-    color: '#ffffff',
-    borderRadius: 10,
-    fontFamily: 'UhBeeQUEENJ',
-    lineHeight: '14px',
-    fontSize: '14',
-    padding: '2px 10px 5px 10px',
-  },
-  '& .MuiSlider-thumb': {
-    height: 27,
-    width: 27,
-    backgroundColor: '#799640',
-    boxShadow: '0',
-    '&:hover': {
-      boxShadow: '0 0 0 8px rgba(121, 150, 64, 0.16)',
-    },
-  },
-  '& .MuiSlider-track': {
-    height: 12,
-  },
-  '& .MuiSlider-rail': {
-    border: '1px solid #799640',
-    height: 12,
-    color: theme.palette.mode === 'dark' ? '#bfbfbf' : '#ffffff',
-    opacity: theme.palette.mode === 'dark' ? undefined : 1,
-  },
-}))
-
-function AirbnbThumbComponent(props) {
-  const { children, ...other } = props
-  return <SliderThumb {...other}>{children}</SliderThumb>
-}
-
-function valueLabelFormat(value) {
-  return `앞으로 ${value}분!`
-}
-
 export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <main className="flex flex-col gap-3">
-        <div className="mt-5 rounded-2xl border border-dashed border-borderColor bg-bgCardColor/50  p-10">
-          <h1 className="leading-20 text-2xl font-extrabold tracking-tight  dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
-            미션을 적어주세요
-          </h1>
-          <div className="relative mt-4">
+        <div className="sticky top-0 z-10 flex flex-col justify-center bg-bgColor text-base">
+          <div className="flex justify-center">
+            <div className="flex w-[300px] flex-col gap-2 text-3xl font-bold">
+              <div className="flex justify-center">결정장애인 저를 위해 투표</div>
+              <div className="flex justify-between">
+                <span>한번 !</span>
+                <span>부탁요</span>
+              </div>
+            </div>
+          </div>
+          <div className="-mt-9 flex justify-center">
+            <Image alt={'삼콩이 뽀바줘'} src={'/static/images/logo.png'} width={130} height={70} />
+          </div>
+          <div className="-mt-4 flex justify-between rounded-2xl border-2 border-borderColor bg-white p-2">
             <input
-              aria-label="Search articles"
               type="text"
               onChange={(e) => {}}
-              className="block w-full rounded-xl border-2 border-borderColor bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
+              className="border-1 w-[90%] focus:border-current focus:ring-0 "
             />
           </div>
-          <h1 className=" leading-20 mt-10 text-2xl font-extrabold tracking-tight  dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
-            마감 시간 설정
-          </h1>
-          <AirbnbSlider
-            className=" mt-2"
-            valueLabelDisplay="auto"
-            slots={{ thumb: AirbnbThumbComponent }}
-            defaultValue={20}
-            marks={marks}
-            valueLabelFormat={valueLabelFormat}
-          />
+        </div>
+        <div className=" flex flex-col  gap-2">
+          <div>항목 6개</div>
+          <div className="mt-2 grid rounded-2xl border border-dashed border-borderColor bg-bgCardColor/50 px-4 py-2">
+            <div className="grid grid-cols-12 gap-2 border-b-[2px] pb-3 pt-3">
+              <div className="col-span-2">
+                <div className=" w-100 center leading-0 rounded-lg bg-rank1Color py-[2px] text-center text-white">
+                  1위
+                </div>
+              </div>
+              <div className="col-span-8 ">
+                <div className="text-2xl leading-6 text-black">
+                  짜장면짜장면짜장면짜장면짜장면짜장면짜장면
+                </div>
+                <div className="text-sm leading-10 text-grayColor">투표 1명</div>
+              </div>
+              <div className="col-span-2">
+                <Image
+                  alt={'짜장면'}
+                  src={'/static/images/sample.png'}
+                  className="object-contain"
+                  width={80}
+                  height={80}
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-12 gap-2 border-b-[2px] pb-3 pt-3">
+              <div className="col-span-2">
+                <div className=" w-100 center leading-0 rounded-lg border border-buttonColor bg-white py-[2px] text-center text-black">
+                  2위
+                </div>
+              </div>
+              <div className="col-span-8 ">
+                <div className="text-2xl leading-6 text-black">
+                  짜장면짜장면짜장면짜장면짜장면짜장면짜장면
+                </div>
+                <div className="text-sm leading-10 text-grayColor">투표 1명</div>
+              </div>
+              <div className="col-span-2">
+                <Image
+                  alt={'짜장면'}
+                  src={'/static/images/sample.png'}
+                  className="object-contain"
+                  width={80}
+                  height={80}
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-12 gap-2  pb-3 pt-3">
+              <div className="col-span-2">
+                <div className=" w-100 center leading-0 rounded-lg border border-buttonColor bg-white py-[2px] text-center text-black">
+                  3위
+                </div>
+              </div>
+              <div className="col-span-8 ">
+                <div className="text-2xl leading-6 text-black">
+                  짜장면짜장면짜장면짜장면짜장면짜장면짜장면
+                </div>
+                <div className="text-sm leading-10 text-grayColor">투표 1명</div>
+              </div>
+              <div className="col-span-2">
+                <Image
+                  alt={'짜장면'}
+                  src={'/static/images/sample.png'}
+                  className="object-contain"
+                  width={80}
+                  height={80}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </>
