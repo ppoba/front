@@ -9,7 +9,8 @@ import SectionContainer from './SectionContainer'
 const LayoutWrapper = ({ children }) => {
   return (
     <SectionContainer>
-      <div className="relative flex h-screen min-h-screen flex-col justify-between">
+      {children}
+      {/* <div className="relative flex h-screen min-h-screen flex-col justify-between">
         <main className="flex flex-col bg-bgColor ">{children}</main>
         <bottom className="sticky bottom-0 z-50 w-full bg-bgColor">
           <div className="mb-3 flex flex-col items-center">
@@ -20,7 +21,7 @@ const LayoutWrapper = ({ children }) => {
             </Link>
           </div>
         </bottom>
-      </div>
+      </div> */}
     </SectionContainer>
   )
 }
